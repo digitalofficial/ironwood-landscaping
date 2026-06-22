@@ -2,74 +2,73 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative bg-paper overflow-hidden">
-      <div className="mx-auto max-w-6xl px-5 pt-16 pb-20 md:pt-24 md:pb-28">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-12 items-center">
-          {/* Left — copy */}
-          <div>
-            <p className="eyebrow text-sage mb-4">Tucson&apos;s Landscape Experts</p>
-            <h1 className="font-display font-bold tracking-[-0.02em] text-[2.4rem] leading-[1.08] md:text-[3.6rem] text-ink">
-              Your yard deserves a crew that<br className="hidden md:block" />
-              <span className="text-sage"> knows this desert.</span>
-            </h1>
-            <p className="mt-5 max-w-md text-base md:text-[17px] text-ink/60 leading-relaxed">
-              Design, installation, and year-round maintenance from a locally owned crew that understands Tucson&apos;s soil, sun, and monsoons.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link href="/contact" className="btn-lift rounded-full bg-sage px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-bark transition-colors">
-                Get a free estimate
-              </Link>
-              <a href="tel:+15200000000" className="rounded-full border border-ink/15 px-6 py-3.5 text-[15px] font-semibold text-ink/70 hover:border-sage/50 hover:text-sage transition-colors">
-                (520) 000-0000
-              </a>
-            </div>
+    <section id="home" className="relative min-h-screen flex items-center pt-20">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&h=900&fit=crop&crop=center"
+          alt="Beautiful two-story home with lush green landscaped front yard in Tucson"
+          className="w-full h-full object-cover"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-black/40 lg:bg-gradient-to-r from-black/75 via-black/45 to-transparent" />
+      </div>
 
-            {/* Trust badges */}
-            <div className="mt-8 flex flex-wrap items-center gap-4 text-[13px] text-ink/50">
-              <span className="flex items-center gap-1.5"><span className="h-5 w-5 rounded-full bg-sage/10 text-sage grid place-items-center text-[10px]">&#10003;</span> ROC Licensed</span>
-              <span className="flex items-center gap-1.5"><span className="h-5 w-5 rounded-full bg-sage/10 text-sage grid place-items-center text-[10px]">&#10003;</span> 10+ Years</span>
-              <span className="flex items-center gap-1.5"><span className="h-5 w-5 rounded-full bg-sage/10 text-sage grid place-items-center text-[10px]">&#10003;</span> Insured</span>
-            </div>
+      <div className="relative z-10 mx-auto max-w-6xl px-5 lg:px-12 w-full mt-10">
+        {/* Content card — blurred on mobile, transparent on desktop */}
+        <div className="max-w-2xl text-white bg-black/40 backdrop-blur-md ring-1 ring-white/10 rounded-3xl p-6 sm:p-8 lg:bg-transparent lg:backdrop-blur-none lg:ring-0 lg:rounded-none lg:p-0">
+          <p className="eyebrow text-cactus mb-4">Tucson&apos;s Landscape Experts</p>
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg text-white">
+            Landscapes Built<br />
+            for the <span className="font-serif italic font-normal text-cactus">Sonoran Desert.</span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-xl drop-shadow">
+            Design, installation, and year-round maintenance from a crew that understands Tucson&apos;s soil, sun, and monsoons. We build outdoor spaces that thrive.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto bg-cactus text-bark px-8 py-4 rounded-full font-semibold hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-lg shadow-cactus/30"
+            >
+              Get a Free Estimate
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+            </Link>
+            <a
+              href="tel:+15200000000"
+              className="w-full sm:w-auto px-8 py-4 rounded-full font-medium text-white hover:bg-white/10 transition-colors flex items-center justify-center gap-2 border border-white/30 backdrop-blur-sm"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>
+              (520) 000-0000
+            </a>
           </div>
+        </div>
 
-          {/* Right — property image + social proof */}
-          <div className="relative">
-            {/* Main property image */}
-            <div className="relative overflow-hidden rounded-3xl shadow-[0_30px_80px_-20px_rgba(26,46,26,.3)]">
+        {/* Bottom-right social proof card — desktop only */}
+        <div className="hidden lg:block absolute bottom-12 right-12 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl w-72 text-white">
+          <div className="text-4xl font-bold mb-1 font-display">800+</div>
+          <p className="font-medium mb-3">Properties Maintained in Tucson</p>
+
+          {/* Avatar stack + stars */}
+          <div className="flex items-center gap-3">
+            <div className="flex -space-x-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&crop=center"
-                alt="Beautiful Tucson home with landscaped front yard"
-                className="w-full aspect-[4/3] object-cover"
-              />
-              {/* Subtle gradient overlay at bottom for review card readability */}
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/50 to-transparent" />
-
-              {/* Review card — bottom right */}
-              <div className="absolute bottom-4 right-4 left-4 sm:left-auto sm:max-w-[280px]">
-                <div className="rounded-2xl bg-white/95 backdrop-blur-sm p-4 shadow-lg">
-                  {/* Avatar stack */}
-                  <div className="flex items-center gap-3 mb-2.5">
-                    <div className="flex -space-x-2.5">
-                      <div className="h-9 w-9 rounded-full border-2 border-white bg-sage/80 grid place-items-center text-white text-[11px] font-bold">JM</div>
-                      <div className="h-9 w-9 rounded-full border-2 border-white bg-bark/70 grid place-items-center text-white text-[11px] font-bold">SK</div>
-                      <div className="h-9 w-9 rounded-full border-2 border-white bg-terra/80 grid place-items-center text-white text-[11px] font-bold">RL</div>
-                      <div className="h-9 w-9 rounded-full border-2 border-white bg-cactus/70 grid place-items-center text-white text-[11px] font-bold">AP</div>
-                    </div>
-                    <div>
-                      <div className="text-terra text-sm tracking-wide leading-none">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                      <div className="text-[11px] text-ink/50 mt-0.5">4.9 avg &middot; 200+ reviews</div>
-                    </div>
-                  </div>
-                  <p className="text-[12.5px] text-ink/70 leading-relaxed">&ldquo;Completely transformed our backyard. Native plants, flagstone patio — looks incredible.&rdquo;</p>
-                </div>
-              </div>
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="" className="w-10 h-10 rounded-full border-2 border-white/80 object-cover" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="" className="w-10 h-10 rounded-full border-2 border-white/80 object-cover" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face" alt="" className="w-10 h-10 rounded-full border-2 border-white/80 object-cover" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="" className="w-10 h-10 rounded-full border-2 border-white/80 object-cover" />
             </div>
-
-            {/* Floating stat chips */}
-            <div className="absolute -top-3 -left-3 md:-left-6 rounded-2xl bg-white shadow-lg px-4 py-3 border border-ink/[0.06]">
-              <div className="font-display font-bold text-2xl text-sage">800+</div>
-              <div className="text-[11px] text-ink/45">Properties maintained</div>
+            <div>
+              <div className="flex gap-0.5 text-yellow-400">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p className="text-xs text-white/60 mt-0.5">5.0 &middot; 200+ reviews</p>
             </div>
           </div>
         </div>
