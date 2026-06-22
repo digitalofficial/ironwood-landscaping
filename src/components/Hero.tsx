@@ -1,77 +1,75 @@
 import Link from "next/link";
-import { Foliage } from "./Foliage";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-bark text-white">
-      <div className="absolute inset-0" style={{ background: "radial-gradient(120% 90% at 18% 0%, #3D6B4E 0%, #264A32 45%, #1A2E1A 78%)" }} />
-      <Foliage seed={7} opacity={0.5} />
-      <div className="absolute bottom-0 left-0 right-0 rootline" />
-
-      <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-24 md:pt-28 md:pb-32">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 items-center">
+    <section className="relative bg-paper overflow-hidden">
+      <div className="mx-auto max-w-6xl px-5 pt-16 pb-20 md:pt-24 md:pb-28">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-12 items-center">
           {/* Left — copy */}
           <div>
-            <p className="eyebrow text-cactus/90 mb-5">Desert-smart landscaping &middot; Tucson &amp; the Foothills</p>
-            <h1 className="font-display font-bold tracking-[-0.02em] text-[2.6rem] leading-[1.05] md:text-[4.2rem] max-w-2xl">
-              Landscapes built for the<br /><span className="ironwood-text">Sonoran Desert.</span>
+            <p className="eyebrow text-sage mb-4">Tucson&apos;s Landscape Experts</p>
+            <h1 className="font-display font-bold tracking-[-0.02em] text-[2.4rem] leading-[1.08] md:text-[3.6rem] text-ink">
+              Your yard deserves a crew that<br className="hidden md:block" />
+              <span className="text-sage"> knows this desert.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base md:text-lg text-white/70 leading-relaxed">
-              Design, installation, and year-round maintenance from a crew that understands Tucson&apos;s soil, sun, and monsoons. We build outdoor spaces that thrive — not just survive.
+            <p className="mt-5 max-w-md text-base md:text-[17px] text-ink/60 leading-relaxed">
+              Design, installation, and year-round maintenance from a locally owned crew that understands Tucson&apos;s soil, sun, and monsoons.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
-              <Link href="/contact" className="rounded-full bg-cactus px-6 py-3.5 text-[15px] font-semibold text-bark hover:bg-white transition-colors">Free estimate</Link>
-              <a href="tel:+15200000000" className="rounded-full glass px-6 py-3.5 text-[15px] font-semibold text-white hover:border-cactus/60 transition-colors">Call (520) 000-0000</a>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link href="/contact" className="btn-lift rounded-full bg-sage px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-bark transition-colors">
+                Get a free estimate
+              </Link>
+              <a href="tel:+15200000000" className="rounded-full border border-ink/15 px-6 py-3.5 text-[15px] font-semibold text-ink/70 hover:border-sage/50 hover:text-sage transition-colors">
+                (520) 000-0000
+              </a>
             </div>
-            <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-white/55">
-              <span className="flex items-center gap-2"><span className="text-cactus">&#9670;</span> ROC Licensed &amp; Insured</span>
-              <span className="flex items-center gap-2"><span className="text-cactus">&#9670;</span> 10+ Years in Tucson</span>
-              <span className="flex items-center gap-2"><span className="text-cactus">&#9670;</span> Locally Owned</span>
+
+            {/* Trust badges */}
+            <div className="mt-8 flex flex-wrap items-center gap-4 text-[13px] text-ink/50">
+              <span className="flex items-center gap-1.5"><span className="h-5 w-5 rounded-full bg-sage/10 text-sage grid place-items-center text-[10px]">&#10003;</span> ROC Licensed</span>
+              <span className="flex items-center gap-1.5"><span className="h-5 w-5 rounded-full bg-sage/10 text-sage grid place-items-center text-[10px]">&#10003;</span> 10+ Years</span>
+              <span className="flex items-center gap-1.5"><span className="h-5 w-5 rounded-full bg-sage/10 text-sage grid place-items-center text-[10px]">&#10003;</span> Insured</span>
             </div>
           </div>
 
-          {/* Right — property visual + review */}
-          <div className="hidden lg:block relative">
-            {/* Property image placeholder */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
-              <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 140% 100% at 50% 20%, #4A7A5A 0%, #2D5A3A 40%, #1A2E1A 90%)" }} />
-              <Foliage seed={21} opacity={0.6} />
-
-              {/* Floating credential chips */}
-              <div className="absolute top-5 left-5">
-                <span className="glass rounded-full px-4 py-2 text-xs font-semibold text-white animate-float">&#9670; Desert Natives</span>
-              </div>
-              <div className="absolute top-16 right-5">
-                <span className="glass rounded-full px-4 py-2 text-xs font-semibold text-white animate-float" style={{ animationDelay: "1.5s" }}>&#9670; Hardscaping</span>
-              </div>
-              <div className="absolute top-32 left-8">
-                <span className="glass rounded-full px-4 py-2 text-xs font-semibold text-white animate-float" style={{ animationDelay: "3s" }}>&#9670; Irrigation</span>
-              </div>
+          {/* Right — property image + social proof */}
+          <div className="relative">
+            {/* Main property image */}
+            <div className="relative overflow-hidden rounded-3xl shadow-[0_30px_80px_-20px_rgba(26,46,26,.3)]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&crop=center"
+                alt="Beautiful Tucson home with landscaped front yard"
+                className="w-full aspect-[4/3] object-cover"
+              />
+              {/* Subtle gradient overlay at bottom for review card readability */}
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/50 to-transparent" />
 
               {/* Review card — bottom right */}
-              <div className="absolute bottom-5 right-5 left-5">
-                <div className="glass rounded-2xl p-4">
-                  <div className="text-terra text-sm tracking-wide mb-1.5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                  <p className="text-[13px] text-white/80 leading-relaxed">&ldquo;They completely transformed our backyard with native plants and a flagstone patio. Best investment we&apos;ve made on this house.&rdquo;</p>
-                  <p className="mt-2 text-[12px] font-semibold text-white/60">— Foothills homeowner</p>
+              <div className="absolute bottom-4 right-4 left-4 sm:left-auto sm:max-w-[280px]">
+                <div className="rounded-2xl bg-white/95 backdrop-blur-sm p-4 shadow-lg">
+                  {/* Avatar stack */}
+                  <div className="flex items-center gap-3 mb-2.5">
+                    <div className="flex -space-x-2.5">
+                      <div className="h-9 w-9 rounded-full border-2 border-white bg-sage/80 grid place-items-center text-white text-[11px] font-bold">JM</div>
+                      <div className="h-9 w-9 rounded-full border-2 border-white bg-bark/70 grid place-items-center text-white text-[11px] font-bold">SK</div>
+                      <div className="h-9 w-9 rounded-full border-2 border-white bg-terra/80 grid place-items-center text-white text-[11px] font-bold">RL</div>
+                      <div className="h-9 w-9 rounded-full border-2 border-white bg-cactus/70 grid place-items-center text-white text-[11px] font-bold">AP</div>
+                    </div>
+                    <div>
+                      <div className="text-terra text-sm tracking-wide leading-none">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                      <div className="text-[11px] text-ink/50 mt-0.5">4.9 avg &middot; 200+ reviews</div>
+                    </div>
+                  </div>
+                  <p className="text-[12.5px] text-ink/70 leading-relaxed">&ldquo;Completely transformed our backyard. Native plants, flagstone patio — looks incredible.&rdquo;</p>
                 </div>
               </div>
             </div>
 
-            {/* Stats bar below the image */}
-            <div className="mt-4 grid grid-cols-3 gap-3">
-              <div className="glass rounded-xl px-3 py-2.5 text-center">
-                <div className="font-display font-bold text-lg text-white">800+</div>
-                <div className="text-[11px] text-white/50">Properties</div>
-              </div>
-              <div className="glass rounded-xl px-3 py-2.5 text-center">
-                <div className="font-display font-bold text-lg text-white">10yr</div>
-                <div className="text-[11px] text-white/50">In Tucson</div>
-              </div>
-              <div className="glass rounded-xl px-3 py-2.5 text-center">
-                <div className="font-display font-bold text-lg text-white">4.9&#9733;</div>
-                <div className="text-[11px] text-white/50">Rating</div>
-              </div>
+            {/* Floating stat chips */}
+            <div className="absolute -top-3 -left-3 md:-left-6 rounded-2xl bg-white shadow-lg px-4 py-3 border border-ink/[0.06]">
+              <div className="font-display font-bold text-2xl text-sage">800+</div>
+              <div className="text-[11px] text-ink/45">Properties maintained</div>
             </div>
           </div>
         </div>
